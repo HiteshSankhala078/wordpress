@@ -126,3 +126,37 @@ plugin > Duplicate Post
 <!-- woocommerce -->
 
 plugin > woocommerce 
+
+website > woocommerce.com
+Shortcodes included with WooCommerce
+
+<!-- product_categories -->
+
+<section class="section section-categories-home">
+    <div class="wrap">
+        <?php echo do_shortcode('[product_categories ids="21,23,24" limit="3" columns="3"]'); ?>
+    </div>
+</section>
+
+note: cetegorise ids img 1,2,3 line to line set
+
+<!-- best selleing -->
+<?php echo do_shortcode('[products limit="2" columns="2" ids="334,333" best_selling="true" ]'); ?>
+
+note: all product page show product, css style> section yaa div class name and best selling class name use -edit them style  
+
+<!-- woocommerce page use  -->
+.1 content-product-cat.php
+.2 content-product.php
+.3 content-single-product.php
+.4 archive-product.php
+
+note: section and wrap use 
+
+
+<!-- elementor -->
+
+-hello elementor them and elementor plugin
+
+install and use slider....
+
