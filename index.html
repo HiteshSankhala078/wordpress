@@ -153,6 +153,48 @@ note: all product page show product, css style> section yaa div class name and b
 
 note: section and wrap use 
 
+<!-- wordpress CPT -->
+function code (Event)
+add_action('init', 'codex_event_init');
+function codex_event_init()
+{
+    $labels = array(
+        'name'               => _x('Events', 'post type general name', 'houseum'),
+        'singular_name'      => _x('Event', 'post type singular name', 'houseum'),
+        'menu_name'          => _x('Events', 'admin menu', 'houseum'),
+        'name_admin_bar'     => _x('Event', 'add new on admin bar', 'houseum'),
+        'add_new'            => _x('Add new', 'event', 'houseum'),
+        'add_new_item'       => __('Add new event', 'houseum'),
+        'new_item'           => __('New event', 'houseum'),
+        'edit_item'          => __('Edit event', 'houseum'),
+        'view_item'          => __('View event', 'houseum'),
+        'all_items'          => __('All events', 'houseum'),
+        'search_items'       => __('Search event', 'houseum'),
+        'parent_item_colon'  => __('Parent event:', 'houseum'),
+        'not_found'          => __('No event found.', 'houseum'),
+        'not_found_in_trash' => __('No event found in Trash.', 'houseum')
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'description'        => __('Description.', 'houseum'),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array('slug' => 'events'),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'exclude_from_search' => false,
+        'menu_position'      => null,
+        'supports'           => array('title', 'editor')
+    );
+
+    register_post_type('event', $args);
+    flush_rewrite_rules();
+}
 
 <!-- elementor -->
 
